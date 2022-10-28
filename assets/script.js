@@ -3,10 +3,11 @@ var searchBtn = document.querySelector('#search-btn');
 
 var cityWeatherDiv = document.querySelector('#cityweather');
 var cityForecastDiv = document.querySelector('#forecast');
+var previousSearches = document.querySelector('#previouscities');
 
 var index = document.querySelector('#uvI');
 
-var currentDay = moment().format('L');
+var cityList = [];
 
 var apiKey = 'b1af4a50fe995581f017fac3e4432205';
 
@@ -30,7 +31,7 @@ function cityWeather(searchInput) {
 
             var weatherHtml = `
                     <div>
-                        <h2>${data.name} on ${currentDay}</h2>
+                        <h2>${data.name}</h2>
                         <img src='${weatherIcon}'>
                     </div>
 
@@ -82,7 +83,7 @@ function uvIndex(lon, lat){
 
 function fivedayForecast(lon, lat) {
 
-    var thirdWeatherUrl = "api.openweathermap.org/data/2.5/forecast?lat="+ lat + "&lon=" + lon + "&appid=" + apiKey;
+    var thirdWeatherUrl = "api.openweathermap.org/data/2.5/forecast?lat="+ lat + "&lon=" + lon + "&appid=" + apiKey + '&units=metric';
     console.log(thirdWeatherUrl);
 
     fetch(thirdWeatherUrl)
@@ -94,7 +95,30 @@ function fivedayForecast(lon, lat) {
 
 }
 
+
+
 searchBtn.addEventListener('click', function(){
+
     var cityName = searchInput.value;
+
+    // if (!cityList.includes(cityName)) {
+    //     cityList.push(cityName);
+
+    //     var searchedCity = `
+    //         <li class="btn">${cityName}</li>
+    //     `;
+
+    //     previousSearches.innerHTML = searchedCity;
+    // }
+
+    // localStorage.setItem("city", JSON.stringify(cityList));
+    // console.log(cityList);
+
     cityWeather(cityName);
 })
+
+// To do:
+// 1. 5 Day Forecast using the Open Weather API
+// 2. Display the current date on the main weather info & the upcoming dates on the 5 day forecast
+// 3. Create a function that stores the city inputs into localstorage then displays them as buttons
+// 4. Update the CSS and make the webpage more resposive & good looking

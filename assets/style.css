@@ -2,25 +2,31 @@
     --drop-shadow: drop-shadow(-2px 13px 10px rgba(0, 0, 0, 0.3777));
 }
 
+* {
+    margin: 0;
+}
+
 body {
     font-family: 'Trebuchet MS', sans-serif;
 }
 
 header {
     color: #6c767d;
-    background-color: white;
+    background-color: rgb(216, 226, 235);
     text-align: center;
+    padding: 1rem;
 }
 
 footer {
+    color: #6c767d;
     font-size: 20px;
-    background-color: white;
+    background-color: rgb(216, 226, 235);
     text-align: center;
 }
 
 .left-col {
     padding: 20px;
-    height: 100vh;
+    background-color: rgb(255, 250, 237);
 }
 
 .btn {
@@ -29,6 +35,18 @@ footer {
 
 card {
     border: 0;
+}
+
+h5 {
+    padding-top: 10px;
+}
+
+.right-col {
+    padding: 20px;
+}
+
+#clear-btn {
+    width: 100%;
 }
 
 .uvIndexRate {
@@ -45,4 +63,8 @@ card {
 
 #else {
     background-color: lightyellow;
+}
+
+.row {
+    --bs-gutter-x: 0;
 }

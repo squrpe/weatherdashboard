@@ -26,13 +26,17 @@
                     <button class="btn btn-outline-secondary" type="button" id="search-btn"><i class="fas fa-search"></i></button>
                 </div>
 
+                <hr class="hidden">
+
                 <button class="btn btn-outline-secondary" type="button" id="clear-btn">Clear History</button>
 
-                <h5>Recent searches:</h5>
-                <ul id="previous-cities"></ul>
+                <div class="recentSearchesDiv hidden">
+                    <h5>Recent searches:</h5>
+                    <ul id="previouscities"></ul>
+                </div>
             </div>
 
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-8 right-col">
 
                 <div class="row">
 
@@ -57,7 +61,7 @@
         <p>Weather Dashboard © 2022 - Made by <a href="https://github.com/squrpe">squrpe</a></p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    
     <script src='./assets/script.js'></script>
 </body>
 </html>
