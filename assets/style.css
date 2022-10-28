@@ -1,0 +1,48 @@
+:root {
+    --drop-shadow: drop-shadow(-2px 13px 10px rgba(0, 0, 0, 0.3777));
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+header {
+    color: #6c767d;
+    background-color: white;
+    text-align: center;
+}
+
+footer {
+    font-size: 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.left-col {
+    padding: 20px;
+    height: 100vh;
+}
+
+.btn {
+    background-color: white;
+}
+
+card {
+    border: 0;
+}
+
+.uvIndexRate {
+    color: black;
+}
+
+#over {
+    background-color: red;
+}
+
+#between {
+    background-color: orange;
+}
+
+#else {
+    background-color: lightyellow;
+}
