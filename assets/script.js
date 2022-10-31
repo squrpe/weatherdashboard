@@ -31,7 +31,7 @@ function cityWeather(searchInput) {
 
             var weatherHtml = `
                     <div>
-                        <h2>${data.name}</h2>
+                        <h2>${data.name} ${dayjs.unix(data.dt).format('D/M/YYYY')}</h2>
                         <img src='${weatherIcon}'>
                     </div>
 
@@ -83,16 +83,46 @@ function uvIndex(lon, lat){
 
 function fivedayForecast(lon, lat) {
 
-    var thirdWeatherUrl = "api.openweathermap.org/data/2.5/forecast?lat="+ lat + "&lon=" + lon + "&appid=" + apiKey + '&units=metric';
+    var thirdWeatherUrl = "https://api.openweathermap.org/data/2.5/forecast?lat="+ lat + "&lon=" + lon + "&appid=" + apiKey + '&units=metric';
     console.log(thirdWeatherUrl);
 
     fetch(thirdWeatherUrl)
         .then((response) => response.json())
         .then((data3) => { 
             console.log(data3);
-
+            
+            displayCard(data3.list);
         })
 
+}
+
+function createCard(data){
+
+    var iconUrl = 'https://openweathermap.org/img/wn/' + data.weather[0].icon + '@2x.png';
+
+    var display = `
+                <div class='card col cardDivs'>
+                    <h5 id='weatherDate'>${dayjs.unix(data.dt).format('D/M/YYYY')}<img id='weatherIcon' src='${iconUrl}'/></h5>
+                    <p id='weatherTemp'>Temperature: ${data.main.temp}°C</p>
+                    <p id='weatherHum'>Humidity: ${data.main.humidity}%</p>
+                    <p id='weatherWind'>Wind Speed: ${data.wind.speed} mph</p>
+                </div>
+            `;
+
+    return display;
+}
+
+function displayCard(weatherData){
+
+    var forecast = '';
+
+    for (var i = 6; i < weatherData.length; i+=8) {
+
+        forecast += createCard(weatherData[i]);
+
+    }
+
+    cityForecastDiv.innerHTML = forecast;
 }
 
 
