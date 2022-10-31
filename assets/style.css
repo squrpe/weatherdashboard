@@ -24,6 +24,8 @@ footer {
     text-align: center;
 }
 
+/* Search Column Selectors */
+
 .left-col {
     padding: 20px;
     background-color: rgb(255, 250, 237);
@@ -76,4 +78,15 @@ h5 {
 
 .cardDivs{
     flex-basis: 40px;
+}
+
+#previouscities {
+    display: block;
+}
+
+.cityBtn {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
