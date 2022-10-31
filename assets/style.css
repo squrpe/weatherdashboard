@@ -68,3 +68,12 @@ h5 {
 .row {
     --bs-gutter-x: 0;
 }
+
+#forecast {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cardDivs{
+    flex-basis: 40px;
+}

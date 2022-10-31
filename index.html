@@ -18,7 +18,7 @@
     <main>
 
         <div class="row">
-            <div class="col-12 col-md-4 left-col">
+            <div class="col-12 col-md-3 left-col">
                 <h3>Input a City:</h3>
 
                 <div class="input-group mb-3">
@@ -36,7 +36,7 @@
                 </div>
             </div>
 
-            <div class="col-12 col-md-8 right-col">
+            <div class="col-12 col-md-9 right-col">
 
                 <div class="row">
 
@@ -48,7 +48,7 @@
                     </div>
 
                     <div class="col-12">
-                        <div id="forecast"></div>
+                        <div class="row" id="forecast"></div>
                     </div>
 
                 </div>
@@ -61,6 +61,21 @@
         <p>Weather Dashboard © 2022 - Made by <a href="https://github.com/squrpe">squrpe</a></p>
     </footer>
 
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"
+      integrity="sha512-0fcCRl828lBlrSCa8QJY51mtNqTcHxabaXVLPgw/jPA5Nutujh6CbTdDgRzl9aSPYW/uuE7c4SffFUQFBAy6lg=="
+      crossorigin="anonymous"
+    ></script>
+    <script 
+      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/utc.min.js" 
+      integrity="sha512-m00bfmYnAl3plEBlQfeQUhw/U2uvmw29V2+jxSWpAjankMWS+zAsjezbKWDEJNXqWq9o9qQZSOiA2RKDpa4D5w==" 
+      crossorigin="anonymous"
+    ></script>
+    <script 
+      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/timezone.min.js" 
+      integrity="sha512-pslqxxHAYPCxaSeFSmXXxDkLejD5dbFVC66aiVq0z4v7VTJBU+wqcG1OpNh4p3MjS2D6NCwz/H2QmSc7dXxryg==" 
+      crossorigin="anonymous"
+    ></script>
     
     <script src='./assets/script.js'></script>
 </body>
