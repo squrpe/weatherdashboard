@@ -7,8 +7,6 @@ function init() {
     var index = document.querySelector('#uvI');
     var clearBtn = document.querySelector('#clear-btn');
 
-    var cityButtons = document.querySelector('.cityBtn');
-
     var apiKey = 'b1af4a50fe995581f017fac3e4432205';
 
     var cityList = [];
@@ -27,14 +25,6 @@ function init() {
 
         }
     }
-
-    previousSearches.addEventListener('click', function(event){
-
-        if (cityList.includes(event.target.id)) {
-            cityWeather(event.target.id);
-        }
-    })
-
 
     function cityWeather(searchInput) {
         var weatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + searchInput + '&appid=' + apiKey + '&units=metric';
@@ -143,8 +133,6 @@ function init() {
         cityForecastDiv.innerHTML = forecast;
     }
 
-
-
     searchBtn.addEventListener('click', function(){
 
         var cityName = searchInput.value;
@@ -164,14 +152,18 @@ function init() {
         cityWeather(cityName);
     })
 
+    previousSearches.addEventListener('click', function(event){
+
+        if (cityList.includes(event.target.id)) {
+            cityWeather(event.target.id);
+        }
+    })
+
     clearBtn.addEventListener('click', function(){
         localStorage.clear();
         cityList = [];
         previousSearches.innerHTML = '';
     })
-
-
-    
 }
 
 init();
