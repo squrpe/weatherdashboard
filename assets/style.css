@@ -1,13 +1,18 @@
-:root {
-    --drop-shadow: drop-shadow(-2px 13px 10px rgba(0, 0, 0, 0.3777));
-}
+/* Universal Selectors */
 
 * {
     margin: 0;
 }
 
+html, body {
+    min-height: 100%;
+}
+
 body {
     font-family: 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
 }
 
 header {
@@ -24,17 +29,6 @@ footer {
     text-align: center;
 }
 
-/* Search Column Selectors */
-
-.left-col {
-    padding: 20px;
-    background-color: rgb(255, 250, 237);
-}
-
-.btn {
-    background-color: white;
-}
-
 card {
     border: 0;
 }
@@ -43,12 +37,41 @@ h5 {
     padding-top: 10px;
 }
 
-.right-col {
+.btn {
+    background-color: white;
+}
+
+.row {
+    --bs-gutter-x: 0;
+}
+
+/* Search Column Selectors */
+
+.left-col {
     padding: 20px;
+    background-color: rgb(255, 250, 237);
+    height: auto;
 }
 
 #clear-btn {
     width: 100%;
+}
+
+#previouscities {
+    display: block;
+}
+
+.cityBtn {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Main Info Selectors */
+
+.right-col {
+    padding: 20px;
 }
 
 .uvIndexRate {
@@ -67,26 +90,20 @@ h5 {
     background-color: lightyellow;
 }
 
-.row {
-    --bs-gutter-x: 0;
-}
-
 #forecast {
     display: flex;
     flex-wrap: wrap;
 }
 
 .cardDivs{
+    text-align: center;
     flex-basis: 40px;
-}
-
-#previouscities {
-    display: block;
-}
-
-.cityBtn {
-    width: 100%;
     padding: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 5px;
+}
+
+@media (min-width: 768px) {
+    #forecast {
+        column-count: 2;
+    }
 }
