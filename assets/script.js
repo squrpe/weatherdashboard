@@ -20,18 +20,22 @@ function init() {
         for (var i = 0; i < cityList.length; i++) {
 
             var searchedCity = `
-            <button class='btn btn-outline-secondary cityBtn'>${cityList[i]}</button>
+            <button class='btn btn-outline-secondary cityBtn' id='${cityList[i]}'>${cityList[i]}</button>
             `;
 
             previousSearches.innerHTML += searchedCity;
 
-            // ????
-            previousSearches.addEventListener('click', function(){
-                cityWeather(previousSearches.value);
-            })
-
         }
     }
+
+    previousSearches.addEventListener('click', function(event){
+        console.log(event);
+
+        if (event.target.getAttribute('id') === cityList.value) {
+            console.log('If statement Click');
+        }
+    })
+
 
     function cityWeather(searchInput) {
         var weatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + searchInput + '&appid=' + apiKey + '&units=metric';
@@ -150,7 +154,7 @@ function init() {
             cityList.push(cityName);
 
             var searchedCity = `
-                <button class='btn btn-outline-secondary cityBtn'>${cityName}</button>
+                <button class='btn btn-outline-secondary cityBtn' id='${cityList[i]}'>${cityName}</button>
             `;
 
             previousSearches.innerHTML += searchedCity;
@@ -172,9 +176,3 @@ function init() {
 }
 
 init();
-
-// To do:
-// 1. 5 Day Forecast using the Open Weather API
-// 2. Display the current date on the main weather info & the upcoming dates on the 5 day forecast
-// 3. Create a function that stores the city inputs into localstorage then displays them as buttons
-// 4. Update the CSS and make the webpage more resposive & good looking
