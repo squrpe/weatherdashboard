@@ -29,10 +29,9 @@ function init() {
     }
 
     previousSearches.addEventListener('click', function(event){
-        console.log(event);
 
-        if (event.target.getAttribute('id') === cityList.value) {
-            console.log('If statement Click');
+        if (cityList.includes(event.target.id)) {
+            cityWeather(event.target.id);
         }
     })
 
@@ -43,7 +42,7 @@ function init() {
         fetch(weatherUrl)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 // console.log(data.main.temp);
                 // console.log(data.main.humidity);
                 // console.log(data.wind.speed);
