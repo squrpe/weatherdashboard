@@ -102,6 +102,10 @@ h5 {
     margin: 5px;
 }
 
+p {
+    margin: 5px;
+}
+
 @media (min-width: 768px) {
     #forecast {
         column-count: 2;
