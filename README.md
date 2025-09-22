@@ -47,11 +47,13 @@ Base Code & Project Idea: The University of Adelaide Coding Bootcamp
 
 ## Contact
 
-Lara Nicole - [grockelara@gmail.com](grockelara@gmail.com)
+Lara Grocke - [grockelara@gmail.com](grockelara@gmail.com)
 
 Project Link - https://github.com/squrpe/weatherdashboard
 
 Project Deployment - https://squrpe.github.io/weatherdashboard/
+
+LinkedIn - https://www.linkedin.com/in/laragrocke001
 
 ## License
 
